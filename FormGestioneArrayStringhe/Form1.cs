@@ -42,6 +42,15 @@ namespace FormGestioneArrayStringhe
             }
             input.Text = "";
         }
+        private void bubblesort_Click(object sender, EventArgs e)
+        {
+            listview.Items.Clear();                                                     // Pulizia elementi 'listview'
+            BubbleSort(array, ref dim);                                                 // Chiamata funzione 'BubbleSort'
+            for (int i = 0; i < dim; i++)
+            {
+                listview.Items.Add(array[i]);                                           // Inserimento array in 'listview'
+            }
+        }
         private void ext_Click(object sender, EventArgs e)                              // Uscita programma
         {
             Application.Exit();
@@ -70,6 +79,24 @@ namespace FormGestioneArrayStringhe
                         dim--;                                                          // Diminuzione variabile 'dim'
                     }
                     break;                                                              // Interruzione esecuzione
+                }
+            }
+        }
+        public void BubbleSort(string[] array, ref int dim)                             // Funzione 'BubbleSort' per ordinare in ordine alfabetico gli elementi dell'array
+        {
+            int x, y;                                                                   // Dichiarazione variabili tipo intero 'x' e 'y'
+            string temp;                                                                // Dichiarazione variabile tipo stringa 'temp'
+            for (x = 0; x < dim - 1; x++)                                               // Ciclo per scorrere tutto l'array
+            {
+                for (y = 0; y < dim - 1; y++)                                           // Ciclo confronto a coppie
+                {
+                    int comp = string.Compare(array[y], array[y + 1]);                  // Dichiarazione variabile 'comp' (string.Compare restituisce un intero che indica se la prima stringa è minore (-1), uguale (0) o maggiore (1) rispetto alla seconda stringa.)
+                    if (comp == 1)                                                      // Se 'comp' uguale a '1'
+                    {
+                        temp = array[y];                                                // Salvataggio del elemento alla posizione 'y' dell'array in 'temp'
+                        array[y] = array[y + 1];                                        // Scambio elemento successivo a 'y' nella posizione 'y'
+                        array[y + 1] = temp;                                            // Spostamento elemento contenuto in 'temp' nella posizione successiva a 'y'
+                    }
                 }
             }
         }

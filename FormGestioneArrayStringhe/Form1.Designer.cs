@@ -36,6 +36,7 @@
             this.selopz = new System.Windows.Forms.Label();
             this.agg = new System.Windows.Forms.Button();
             this.canc = new System.Windows.Forms.Button();
+            this.bubblesort = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Titolo
@@ -113,11 +114,22 @@
             this.canc.UseVisualStyleBackColor = true;
             this.canc.Click += new System.EventHandler(this.canc_Click);
             // 
+            // bubblesort
+            // 
+            this.bubblesort.Location = new System.Drawing.Point(19, 196);
+            this.bubblesort.Name = "bubblesort";
+            this.bubblesort.Size = new System.Drawing.Size(89, 23);
+            this.bubblesort.TabIndex = 8;
+            this.bubblesort.Text = "BubbleSort";
+            this.bubblesort.UseVisualStyleBackColor = true;
+            this.bubblesort.Click += new System.EventHandler(this.bubblesort_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bubblesort);
             this.Controls.Add(this.canc);
             this.Controls.Add(this.agg);
             this.Controls.Add(this.selopz);
@@ -143,6 +155,7 @@
         private System.Windows.Forms.Label selopz;
         private System.Windows.Forms.Button agg;
         private System.Windows.Forms.Button canc;
+        private System.Windows.Forms.Button bubblesort;
     }
 }
 
