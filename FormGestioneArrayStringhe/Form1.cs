@@ -27,12 +27,12 @@ namespace FormGestioneArrayStringhe
             dim = 0;                                                                    // Inizializzazione variabile 'dim'
             array = new string[100];                                                    // Inizializzazione variabile 'array'
         }
-        private void agg_Click(object sender, EventArgs e)
+        private void agg_Click(object sender, EventArgs e)                              // Aggiunta elementi
         {
             Aggiunta(input.Text, array, ref dim);                                       // Chiamata funzione 'Aggiunta'
             input.Text = "";
         }
-        private void canc_Click(object sender, EventArgs e)
+        private void canc_Click(object sender, EventArgs e)                             // Cancella elementi
         {
             listview.Items.Clear();                                                     // Pulizia elementi 'listview'
             CancellaS(input.Text, array, ref dim);                                      // Chiamata funzione 'CancellaS'
@@ -42,7 +42,7 @@ namespace FormGestioneArrayStringhe
             }
             input.Text = "";
         }
-        private void bubblesort_Click(object sender, EventArgs e)
+        private void bubblesort_Click(object sender, EventArgs e)                       // Ordina elementi
         {
             listview.Items.Clear();                                                     // Pulizia elementi 'listview'
             BubbleSort(array, ref dim);                                                 // Chiamata funzione 'BubbleSort'
@@ -51,7 +51,7 @@ namespace FormGestioneArrayStringhe
                 listview.Items.Add(array[i]);                                           // Inserimento array in 'listview'
             }
         }
-        private void ricerseq_Click(object sender, EventArgs e)
+        private void ricerseq_Click(object sender, EventArgs e)                         // Cerca posizione elementi
         {
             if (RicercaSeq(input.Text, array) == -1)
             {
@@ -63,6 +63,11 @@ namespace FormGestioneArrayStringhe
                 listview.Clear();
                 listview.Items.Add($"Elemento '{input.Text}' trovato in posizone " + RicercaSeq(input.Text, array));
             }
+        }
+        private void ripet_Click(object sender, EventArgs e)                            // Visualizza elementi ripetuti
+        {
+            listview.Clear();
+            NumeroRipet(array, ref dim);                                                // Chiamata funzione 'NumeroRipet'
         }
         private void ext_Click(object sender, EventArgs e)                              // Uscita programma
         {
@@ -129,6 +134,25 @@ namespace FormGestioneArrayStringhe
                 }
             }
             return risultatoricerca;
+        }
+        public void NumeroRipet(string[] array, ref int dim)                            // Funzione 'NumeroRipet' che restituisce il numero di volte che si ripete un elemento all'interno dell'arrayay
+        {
+            string rc = array[0];
+            int conteggio = 1;
+            for (int i = 1; i < dim; i++)
+            {
+                if (array[i] == rc)
+                {
+                    conteggio++;
+                }
+                else
+                {
+                    listview.Items.Add($"Elemento: '{rc}' Conteggio: {conteggio}");
+                    rc = array[i];
+                    conteggio = 1;
+                }
+            }
+            listview.Items.Add($"Elemento: '{rc}' Conteggio: {conteggio}");
         }
         #endregion Funzioni servizio
     }

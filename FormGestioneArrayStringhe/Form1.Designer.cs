@@ -38,6 +38,7 @@
             this.canc = new System.Windows.Forms.Button();
             this.bubblesort = new System.Windows.Forms.Button();
             this.ricerseq = new System.Windows.Forms.Button();
+            this.ripet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Titolo
@@ -79,9 +80,9 @@
             // listview
             // 
             this.listview.HideSelection = false;
-            this.listview.Location = new System.Drawing.Point(322, 67);
+            this.listview.Location = new System.Drawing.Point(310, 67);
             this.listview.Name = "listview";
-            this.listview.Size = new System.Drawing.Size(443, 195);
+            this.listview.Size = new System.Drawing.Size(455, 195);
             this.listview.TabIndex = 4;
             this.listview.UseCompatibleStateImageBehavior = false;
             this.listview.View = System.Windows.Forms.View.List;
@@ -135,11 +136,22 @@
             this.ricerseq.UseVisualStyleBackColor = true;
             this.ricerseq.Click += new System.EventHandler(this.ricerseq_Click);
             // 
+            // ripet
+            // 
+            this.ripet.Location = new System.Drawing.Point(158, 136);
+            this.ripet.Name = "ripet";
+            this.ripet.Size = new System.Drawing.Size(120, 23);
+            this.ripet.TabIndex = 10;
+            this.ripet.Text = "Ripetuti";
+            this.ripet.UseVisualStyleBackColor = true;
+            this.ripet.Click += new System.EventHandler(this.ripet_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ripet);
             this.Controls.Add(this.ricerseq);
             this.Controls.Add(this.bubblesort);
             this.Controls.Add(this.canc);
@@ -169,6 +181,7 @@
         private System.Windows.Forms.Button canc;
         private System.Windows.Forms.Button bubblesort;
         private System.Windows.Forms.Button ricerseq;
+        private System.Windows.Forms.Button ripet;
     }
 }
 
