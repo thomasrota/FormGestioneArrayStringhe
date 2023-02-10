@@ -51,6 +51,19 @@ namespace FormGestioneArrayStringhe
                 listview.Items.Add(array[i]);                                           // Inserimento array in 'listview'
             }
         }
+        private void ricerseq_Click(object sender, EventArgs e)
+        {
+            if (RicercaSeq(input.Text, array) == -1)
+            {
+                listview.Clear();
+                listview.Items.Add("Elemento non trovato!");
+            }
+            else
+            {
+                listview.Clear();
+                listview.Items.Add($"Elemento '{input.Text}' trovato in posizone " + RicercaSeq(input.Text, array));
+            }
+        }
         private void ext_Click(object sender, EventArgs e)                              // Uscita programma
         {
             Application.Exit();
@@ -99,6 +112,23 @@ namespace FormGestioneArrayStringhe
                     }
                 }
             }
+        }
+        public int RicercaSeq(string e, string[] array)                                 // Funzione 'RicercaSeq' che cerca e resituisce la posizione di un'elemento
+        {
+            int risultatoricerca = 0;                                                   // Dichiarazione variabile tipo intero 'risultatoricerca'
+            for (int i = 0; i < array.Length; i++)                                      // Ciclo controllo presenza elemento ricercato
+            {
+                if (array[i] == e)                                                      // Se elemento array in posizione 'i' è uguale a 'e' (elemento da ricercare)
+                {
+                    risultatoricerca = i;                                               // Assegnazione 'risultatoricerca' valore 'i'
+                    break;                                                              // Interrompere esecuzione
+                }
+                else                                                                    // Altrimenti
+                {
+                    risultatoricerca = -1;                                              // Assegnazione a 'risultatoricerca' valore '-1'
+                }
+            }
+            return risultatoricerca;
         }
         #endregion Funzioni servizio
     }

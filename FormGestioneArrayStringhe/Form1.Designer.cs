@@ -37,6 +37,7 @@
             this.agg = new System.Windows.Forms.Button();
             this.canc = new System.Windows.Forms.Button();
             this.bubblesort = new System.Windows.Forms.Button();
+            this.ricerseq = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Titolo
@@ -78,9 +79,9 @@
             // listview
             // 
             this.listview.HideSelection = false;
-            this.listview.Location = new System.Drawing.Point(351, 67);
+            this.listview.Location = new System.Drawing.Point(322, 67);
             this.listview.Name = "listview";
-            this.listview.Size = new System.Drawing.Size(415, 195);
+            this.listview.Size = new System.Drawing.Size(443, 195);
             this.listview.TabIndex = 4;
             this.listview.UseCompatibleStateImageBehavior = false;
             this.listview.View = System.Windows.Forms.View.List;
@@ -98,7 +99,7 @@
             // 
             this.agg.Location = new System.Drawing.Point(19, 136);
             this.agg.Name = "agg";
-            this.agg.Size = new System.Drawing.Size(89, 23);
+            this.agg.Size = new System.Drawing.Size(120, 23);
             this.agg.TabIndex = 6;
             this.agg.Text = "Aggiunta";
             this.agg.UseVisualStyleBackColor = true;
@@ -108,7 +109,7 @@
             // 
             this.canc.Location = new System.Drawing.Point(19, 166);
             this.canc.Name = "canc";
-            this.canc.Size = new System.Drawing.Size(89, 23);
+            this.canc.Size = new System.Drawing.Size(120, 23);
             this.canc.TabIndex = 7;
             this.canc.Text = "Cancella";
             this.canc.UseVisualStyleBackColor = true;
@@ -118,17 +119,28 @@
             // 
             this.bubblesort.Location = new System.Drawing.Point(19, 196);
             this.bubblesort.Name = "bubblesort";
-            this.bubblesort.Size = new System.Drawing.Size(89, 23);
+            this.bubblesort.Size = new System.Drawing.Size(120, 23);
             this.bubblesort.TabIndex = 8;
             this.bubblesort.Text = "BubbleSort";
             this.bubblesort.UseVisualStyleBackColor = true;
             this.bubblesort.Click += new System.EventHandler(this.bubblesort_Click);
+            // 
+            // ricerseq
+            // 
+            this.ricerseq.Location = new System.Drawing.Point(19, 226);
+            this.ricerseq.Name = "ricerseq";
+            this.ricerseq.Size = new System.Drawing.Size(120, 23);
+            this.ricerseq.TabIndex = 9;
+            this.ricerseq.Text = "Ricerca Sequenziale";
+            this.ricerseq.UseVisualStyleBackColor = true;
+            this.ricerseq.Click += new System.EventHandler(this.ricerseq_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ricerseq);
             this.Controls.Add(this.bubblesort);
             this.Controls.Add(this.canc);
             this.Controls.Add(this.agg);
@@ -156,6 +168,7 @@
         private System.Windows.Forms.Button agg;
         private System.Windows.Forms.Button canc;
         private System.Windows.Forms.Button bubblesort;
+        private System.Windows.Forms.Button ricerseq;
     }
 }
 
