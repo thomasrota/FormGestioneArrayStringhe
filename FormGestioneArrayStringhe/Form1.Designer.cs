@@ -43,6 +43,8 @@
             this.lung = new System.Windows.Forms.Button();
             this.cancocc = new System.Windows.Forms.Button();
             this.clsout = new System.Windows.Forms.Button();
+            this.posinpt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Titolo
@@ -190,11 +192,29 @@
             this.clsout.UseVisualStyleBackColor = true;
             this.clsout.Click += new System.EventHandler(this.clsout_Click);
             // 
+            // posinpt
+            // 
+            this.posinpt.Location = new System.Drawing.Point(179, 67);
+            this.posinpt.Name = "posinpt";
+            this.posinpt.Size = new System.Drawing.Size(63, 20);
+            this.posinpt.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(176, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Posizione:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.posinpt);
             this.Controls.Add(this.clsout);
             this.Controls.Add(this.cancocc);
             this.Controls.Add(this.lung);
@@ -234,6 +254,8 @@
         private System.Windows.Forms.Button lung;
         private System.Windows.Forms.Button cancocc;
         private System.Windows.Forms.Button clsout;
+        private System.Windows.Forms.TextBox posinpt;
+        private System.Windows.Forms.Label label1;
     }
 }
 

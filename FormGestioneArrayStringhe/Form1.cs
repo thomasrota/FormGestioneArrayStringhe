@@ -71,7 +71,7 @@ namespace FormGestioneArrayStringhe
         }
         private void mod_Click(object sender, EventArgs e)                              // Modifica elemento array
         {
-
+            ModificaN(input.Text, Convert.ToInt32(posinpt.Text), array, ref dim);       // Chiamata funzione 'ModificaN'
         }
         private void lung_Click(object sender, EventArgs e)                             // Visualizza elemento più lungo e più corto
         {
@@ -194,6 +194,20 @@ namespace FormGestioneArrayStringhe
                 }
             }
             listview.Items.Add("L'elemento più lungo è: '" + longstr + "', mentre l'elemento più corto è: '" + shortstr + "'.");
+        }
+        public void ModificaN(string e, int p, string[] array, ref int dim)             // Funzione 'MofificaN' che va a modificare un elemento in una determinata posizone
+        {
+            if (p < 0 || p > dim)                                                       // Se 'p' minore 0 o 'p' maggiore di 'dim'
+            {
+                listview.Clear();
+                listview.Items.Add("Posizione non valida!");
+            }
+            else
+            {
+                array[p] = e;
+                listview.Clear();
+                Visualizza(array, ref dim);
+            }
         }
         public void CancellaOcc(string e, string[] array, ref int dim)                  // Funzione 'CancellaOcc' che cancella tutte le occorrenze di un elemento
         {
