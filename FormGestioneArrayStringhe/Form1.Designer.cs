@@ -42,7 +42,7 @@
             this.mod = new System.Windows.Forms.Button();
             this.lung = new System.Windows.Forms.Button();
             this.cancocc = new System.Windows.Forms.Button();
-            this.clean = new System.Windows.Forms.Button();
+            this.clsout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Titolo
@@ -178,13 +178,24 @@
             this.cancocc.TabIndex = 13;
             this.cancocc.Text = "Elimina occorenze";
             this.cancocc.UseVisualStyleBackColor = true;
-            //
+            this.cancocc.Click += new System.EventHandler(this.cancocc_Click);
+            // 
+            // clsout
+            // 
+            this.clsout.Location = new System.Drawing.Point(611, 332);
+            this.clsout.Name = "clsout";
+            this.clsout.Size = new System.Drawing.Size(153, 23);
+            this.clsout.TabIndex = 14;
+            this.clsout.Text = "Pulisci lista / Stampa array";
+            this.clsout.UseVisualStyleBackColor = true;
+            this.clsout.Click += new System.EventHandler(this.clsout_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.clean);
+            this.Controls.Add(this.clsout);
             this.Controls.Add(this.cancocc);
             this.Controls.Add(this.lung);
             this.Controls.Add(this.mod);
@@ -222,7 +233,7 @@
         private System.Windows.Forms.Button mod;
         private System.Windows.Forms.Button lung;
         private System.Windows.Forms.Button cancocc;
-        private System.Windows.Forms.Button clean;
+        private System.Windows.Forms.Button clsout;
     }
 }
 

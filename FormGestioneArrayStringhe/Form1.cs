@@ -78,14 +78,14 @@ namespace FormGestioneArrayStringhe
             listview.Clear();
             Lunghezza(array, ref dim);
         }
-        private void clean_Click(object sender, EventArgs e)
+        private void cancocc_Click(object sender, EventArgs e)                          // Cancella occorrenze
         {
-            listview.Items.Clear();
-            for (int i = 0; i < dim; i++)
-            {
-                listview.Items.Add(array[i]);
-            }
-
+            CancellaOcc(input.Text, array, ref dim);                                    // Chiamata funzione 'CancellaOcc'
+        }
+        private void clsout_Click(object sender, EventArgs e)                           // Pulire lista e stampa array
+        {
+            listview.Clear();
+            Visualizza(array, ref dim);                                                 // Chiamata funzione 'Visualizza'
         }
         private void ext_Click(object sender, EventArgs e)                              // Uscita programma
         {
@@ -94,6 +94,13 @@ namespace FormGestioneArrayStringhe
         #endregion Funzioni Evento
 
         #region Funzioni Servizio
+        public void Visualizza(string[] array, ref int dim)
+        {
+            for (int i = 0; i < dim; i++)
+            {
+                listview.Items.Add(array[i]);
+            }
+        }
         public void Aggiunta(string e, string[] array, ref int dim)                     // Funzione 'Aggiunta' per aggiungere elementi all'array
         {
             if (dim < array.Length)                                                     // Se non è stata raggiunta la dimensione massima dell'array           
@@ -187,6 +194,28 @@ namespace FormGestioneArrayStringhe
                 }
             }
             listview.Items.Add("L'elemento più lungo è: '" + longstr + "', mentre l'elemento più corto è: '" + shortstr + "'.");
+        }
+        public void CancellaOcc(string e, string[] array, ref int dim)                  // Funzione 'CancellaOcc' che cancella tutte le occorrenze di un elemento
+        {
+            bool canc = false;
+            for (int i = 0; i < dim; i++)
+            {
+                if (array[i] == e)
+                {                                                      
+                    dim--;
+                    for (int j = i; j < dim; j++)
+                    {
+                        array[j] = array[j + 1];
+                    }
+                    i--;
+                    canc = true;
+                }
+            }
+            if (canc == true)
+            {
+                listview.Clear();
+                Visualizza(array, ref dim);
+            }
         }
         #endregion Funzioni servizio
     }
