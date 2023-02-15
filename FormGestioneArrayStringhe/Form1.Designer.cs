@@ -39,6 +39,10 @@
             this.bubblesort = new System.Windows.Forms.Button();
             this.ricerseq = new System.Windows.Forms.Button();
             this.ripet = new System.Windows.Forms.Button();
+            this.mod = new System.Windows.Forms.Button();
+            this.lung = new System.Windows.Forms.Button();
+            this.cancocc = new System.Windows.Forms.Button();
+            this.clean = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Titolo
@@ -82,7 +86,7 @@
             this.listview.HideSelection = false;
             this.listview.Location = new System.Drawing.Point(310, 67);
             this.listview.Name = "listview";
-            this.listview.Size = new System.Drawing.Size(455, 195);
+            this.listview.Size = new System.Drawing.Size(455, 258);
             this.listview.TabIndex = 4;
             this.listview.UseCompatibleStateImageBehavior = false;
             this.listview.View = System.Windows.Forms.View.List;
@@ -146,11 +150,44 @@
             this.ripet.UseVisualStyleBackColor = true;
             this.ripet.Click += new System.EventHandler(this.ripet_Click);
             // 
+            // mod
+            // 
+            this.mod.Location = new System.Drawing.Point(158, 166);
+            this.mod.Name = "mod";
+            this.mod.Size = new System.Drawing.Size(120, 23);
+            this.mod.TabIndex = 11;
+            this.mod.Text = "Modifica";
+            this.mod.UseVisualStyleBackColor = true;
+            this.mod.Click += new System.EventHandler(this.mod_Click);
+            // 
+            // lung
+            // 
+            this.lung.Location = new System.Drawing.Point(158, 196);
+            this.lung.Name = "lung";
+            this.lung.Size = new System.Drawing.Size(120, 23);
+            this.lung.TabIndex = 12;
+            this.lung.Text = "Lunghezza";
+            this.lung.UseVisualStyleBackColor = true;
+            this.lung.Click += new System.EventHandler(this.lung_Click);
+            // 
+            // cancocc
+            // 
+            this.cancocc.Location = new System.Drawing.Point(158, 226);
+            this.cancocc.Name = "cancocc";
+            this.cancocc.Size = new System.Drawing.Size(120, 23);
+            this.cancocc.TabIndex = 13;
+            this.cancocc.Text = "Elimina occorenze";
+            this.cancocc.UseVisualStyleBackColor = true;
+            //
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.clean);
+            this.Controls.Add(this.cancocc);
+            this.Controls.Add(this.lung);
+            this.Controls.Add(this.mod);
             this.Controls.Add(this.ripet);
             this.Controls.Add(this.ricerseq);
             this.Controls.Add(this.bubblesort);
@@ -182,6 +219,10 @@
         private System.Windows.Forms.Button bubblesort;
         private System.Windows.Forms.Button ricerseq;
         private System.Windows.Forms.Button ripet;
+        private System.Windows.Forms.Button mod;
+        private System.Windows.Forms.Button lung;
+        private System.Windows.Forms.Button cancocc;
+        private System.Windows.Forms.Button clean;
     }
 }
 

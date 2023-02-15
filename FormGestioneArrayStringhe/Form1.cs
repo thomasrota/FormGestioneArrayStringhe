@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -68,6 +68,24 @@ namespace FormGestioneArrayStringhe
         {
             listview.Clear();
             NumeroRipet(array, ref dim);                                                // Chiamata funzione 'NumeroRipet'
+        }
+        private void mod_Click(object sender, EventArgs e)                              // Modifica elemento array
+        {
+
+        }
+        private void lung_Click(object sender, EventArgs e)                             // Visualizza elemento più lungo e più corto
+        {
+            listview.Clear();
+            Lunghezza(array, ref dim);
+        }
+        private void clean_Click(object sender, EventArgs e)
+        {
+            listview.Items.Clear();
+            for (int i = 0; i < dim; i++)
+            {
+                listview.Items.Add(array[i]);
+            }
+
         }
         private void ext_Click(object sender, EventArgs e)                              // Uscita programma
         {
@@ -135,7 +153,7 @@ namespace FormGestioneArrayStringhe
             }
             return risultatoricerca;
         }
-        public void NumeroRipet(string[] array, ref int dim)                            // Funzione 'NumeroRipet' che restituisce il numero di volte che si ripete un elemento all'interno dell'arrayay
+        public void NumeroRipet(string[] array, ref int dim)                            // Funzione 'NumeroRipet' che restituisce il numero di volte che si ripete un elemento all'interno dell'array
         {
             string rc = array[0];
             int conteggio = 1;
@@ -153,6 +171,22 @@ namespace FormGestioneArrayStringhe
                 }
             }
             listview.Items.Add($"Elemento: '{rc}' Conteggio: {conteggio}");
+        }
+        public void Lunghezza(string[] array, ref int dim)                              // Funzione 'Lunghezza' che ricerca e restituisce il nome più lungo e più corto
+        {
+            string longstr = array[0], shortstr = array[0];                             // Dichiarazione varabili tipo stringa 'longstr' e 'shortstr'
+            for (int i = 1; i < dim; i++)                                               // Ciclo per scorrere tutto l'array
+            {
+                if (array[i].Length > longstr.Length)                                   // Se lunghezza dell'elemento in posizione 'i' è maggiore rispetto a quella della lunghezza di 'longstr'
+                {
+                    longstr = array[i];                                                 // Assegna a 'longstr' elemento array in posizione 'i'
+                }
+                if (array[i].Length < shortstr.Length)                                  // Se lunghezza dell'elemento in posizione 'i' è minore rispetto a quella della lunghezza di 'shortstr'
+                {
+                    shortstr = array[i];                                                // Assegna a 'shortstr' elemento array in posizione 'i'
+                }
+            }
+            listview.Items.Add("L'elemento più lungo è: '" + longstr + "', mentre l'elemento più corto è: '" + shortstr + "'.");
         }
         #endregion Funzioni servizio
     }
