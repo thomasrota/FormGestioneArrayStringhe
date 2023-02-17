@@ -160,20 +160,40 @@ namespace FormGestioneArrayStringhe
             }
             return risultatoricerca;
         }
-        public void NumeroRipet(string[] array, ref int dim)                            // Funzione 'NumeroRipet' che restituisce il numero di volte che si ripete un elemento all'interno dell'array
+        public void NumeroRipet(string[] array, ref int dim)                            // Funzione 'NumeroRipet' che restituisce il numero di volte che si ripete un elemento all'interno dell'onc
         {
-            string rc = array[0];
+            string[] onc = new string[dim];
+            for (int i = 0; i < dim; i++)
+            {
+                onc[i] = array[i];
+            }
+            int x, y;
+            string temp;
+            for (x = 0; x < dim - 1; x++)
+            {
+                for (y = 0; y < dim - 1; y++)
+                {
+                    int comp = string.Compare(onc[y], onc[y + 1]);
+                    if (comp == 1)
+                    {
+                        temp = onc[y];
+                        onc[y] = onc[y + 1];
+                        onc[y + 1] = temp;
+                    }
+                }
+            }
+            string rc = onc[0];
             int conteggio = 1;
             for (int i = 1; i < dim; i++)
             {
-                if (array[i] == rc)
+                if (onc[i] == rc)
                 {
                     conteggio++;
                 }
                 else
                 {
                     listview.Items.Add($"Elemento: '{rc}' Conteggio: {conteggio}");
-                    rc = array[i];
+                    rc = onc[i];
                     conteggio = 1;
                 }
             }
