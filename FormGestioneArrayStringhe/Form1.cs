@@ -63,6 +63,7 @@ namespace FormGestioneArrayStringhe
                 listview.Clear();
                 listview.Items.Add($"Elemento '{input.Text}' trovato in posizone " + RicercaSeq(input.Text, array));
             }
+            input.Text = "";
         }
         private void ripet_Click(object sender, EventArgs e)                            // Visualizza elementi ripetuti
         {
@@ -220,12 +221,16 @@ namespace FormGestioneArrayStringhe
             if (p < 0 || p > dim)                                                       // Se 'p' minore 0 o 'p' maggiore di 'dim'
             {
                 listview.Clear();
+                input.Text = "";
+                posinpt.Text = ("");
                 listview.Items.Add("Posizione non valida!");
             }
             else
             {
                 array[p] = e;
                 listview.Clear();
+                input.Text = "";
+                posinpt.Text = ("");
                 Visualizza(array, ref dim);
             }
         }
@@ -248,6 +253,7 @@ namespace FormGestioneArrayStringhe
             if (canc == true)
             {
                 listview.Clear();
+                input.Text = "";
                 Visualizza(array, ref dim);
             }
         }
